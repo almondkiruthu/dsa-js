@@ -36,7 +36,7 @@ class SinglyLinkedList {
       previousNode = currentNode;
       currentNode = currentNode.next;
     }
-    if (this.length === 0) {
+    if (previousNode === null) {
       this.head = null;
       this.tail = null;
     } else {
@@ -46,4 +46,13 @@ class SinglyLinkedList {
     this.length--;
     return currentNode;
   }
+
+  //shift
+  //unshift
+  //get
+  //set / modify
+  //insert
+  //remove
+  //reverse
+  //print val
 }
