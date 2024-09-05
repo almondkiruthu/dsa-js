@@ -106,9 +106,43 @@ class SinglyLinkedList {
     return true;
   }
   //remove --- remove a node from the Linked List at a specified postion/index
-  remove(index) {}
-  //reverse
-  //print val
+  remove(index) {
+    if (index < 0 || index > this.length) return undefined;
+    if (index === this.length) return !!this.pop();
+    if (index === 0) return !!this.shift();
+
+    let prevNode = this.get(index - 1);
+    let removedNode = prevNode.next;
+    prevNode.next = removedNode.next;
+    removedNode.next = null;
+    this.length--;
+    return removedNode;
+  }
+  //reverse --- reverse a linked list
+  reverse() {
+    let node = this.head;
+    this.head = this.tail;
+    this.tail = node;
+    let next;
+    let prev = null;
+    for (let i = 0; i < this.length; i++) {
+      next = node.next;
+      node.next = prev;
+      prev = node;
+      node = next;
+    }
+    return this;
+  }
+
+  print() {
+    var arr = [];
+    var current = this.head;
+    while (current) {
+      arr.push(current.val);
+      current = current.next;
+    }
+    console.log(arr);
+  }
 }
 
 var list = new SinglyLinkedList();
@@ -118,4 +152,4 @@ list.push(250);
 list.push(350);
 list.push(999);
 list.unshift(234);
-console.log(list.get(4));
+console.log(list.reverse(), list.print());
