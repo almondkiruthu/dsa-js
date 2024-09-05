@@ -57,7 +57,7 @@ class SinglyLinkedList {
     }
     return currentHead;
   }
-
+  //unshift --- add a node from the beginning of the SLL.
   unshift(val) {
     let newNode = new Node(val);
     if (!this.head) return undefined;
@@ -82,7 +82,15 @@ class SinglyLinkedList {
     }
     return currentNode;
   }
-  //set / modify
+  //set/modify --- change value of the node based on it's postion/index in the List
+  set(index, val) {
+    let foundNode = this.get(index);
+    if (foundNode) {
+      foundNode.val = val;
+    } else {
+      return false;
+    }
+  }
   //insert
   //remove
   //reverse
