@@ -91,8 +91,22 @@ class SinglyLinkedList {
       return false;
     }
   }
-  //insert
-  //remove
+  //insert --- adding a node to the Linked List at a specified postion/index
+  insert(index, val) {
+    if (index < 0 || index > this.length) return false;
+    if (index === this.length) return !!this.push(val);
+    if (index === 0) return !!this.unshift(val);
+
+    let newNode = new Node(val);
+    let prevNode = this.get(index - 1);
+    let temp = prevNode.next;
+    prevNode.next = newNode;
+    newNode.next = temp;
+    this.length++;
+    return true;
+  }
+  //remove --- remove a node from the Linked List at a specified postion/index
+  remove(index) {}
   //reverse
   //print val
 }
