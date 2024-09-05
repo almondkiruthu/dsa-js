@@ -71,7 +71,17 @@ class SinglyLinkedList {
 
     return this;
   }
-  //get
+  //get --- retrieves a node by it's position
+  get(index) {
+    if (index < 0 || index >= this.length) return null;
+    let counter = 0;
+    let currentNode = this.head;
+    while (counter !== index) {
+      currentNode = currentNode.next;
+      counter++;
+    }
+    return currentNode;
+  }
   //set / modify
   //insert
   //remove
@@ -86,5 +96,4 @@ list.push(250);
 list.push(350);
 list.push(999);
 list.unshift(234);
-
-console.log(list);
+console.log(list.get(4));
