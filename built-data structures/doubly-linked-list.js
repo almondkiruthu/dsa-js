@@ -41,4 +41,6 @@ class DoublyLinkedList {
     this.length--;
     return poppedNode;
   }
+
+  shift() {}
 }
