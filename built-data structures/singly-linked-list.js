@@ -89,7 +89,7 @@ class SinglyLinkedList {
     return false;
   }
   insert(index, value) {
-    if (index < 0 || index >= this.length) return false;
+    if (index < 0 || index > this.length) return false;
     if (index === 0) return !!this.unshift(value);
     if (index === this.length) return !!this.push(value);
 
@@ -104,7 +104,7 @@ class SinglyLinkedList {
   }
   remove(index) {
     if (index < 0 || index >= this.length) return undefined;
-    if (index === this.length) return this.pop();
+    if (index === this.length - 1) return this.pop();
     if (index === 0) return this.shift();
 
     let previousNode = this.get(index - 1);
@@ -117,6 +117,8 @@ class SinglyLinkedList {
     return removedNode;
   }
   reverse() {
+    if (this.length === 0) return this;
+
     let node = this.head;
     this.head = this.tail;
     this.tail = node;
