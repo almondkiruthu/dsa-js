@@ -10,4 +10,4 @@ To efficiently solve this problem, we can use the fact that the input array cont
 
 You are given an unsorted array containing numbers taken from the range 1 to ‘n’. The array can have duplicates, which means that some numbers will be missing. Find all the missing numbers.
 
-Let’s dive into this problem to better understand the **Fast & Slow pattern**.
+Let’s dive into this problem to better understand the **Cyclic sort pattern**.
