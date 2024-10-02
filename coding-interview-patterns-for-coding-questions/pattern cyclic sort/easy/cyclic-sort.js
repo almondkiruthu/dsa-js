@@ -3,6 +3,7 @@ const cyclicSort = function (nums) {
   while (i < nums.length) {
     let correctIndex = nums[i] - 1;
     if (nums[i] !== nums[correctIndex]) {
+      
       [nums[i], nums[correctIndex]] = [nums[correctIndex], nums[i]];
     } else {
       i++;
