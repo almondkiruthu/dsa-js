@@ -1,15 +1,16 @@
-const cyclicSort = function (nums) {
+function cyclicSort(nums) {
   let i = 0;
   while (i < nums.length) {
-    let correctIndex = nums[i] - 1;
-    if (nums[i] !== nums[correctIndex]) {
-      
-      [nums[i], nums[correctIndex]] = [nums[correctIndex], nums[i]];
+    let toSort = nums[i];
+    let correctIndex = toSort - 1;
+
+    if (toSort !== nums[correctIndex]) {
+      [toSort, nums[correctIndex]] = [nums[correctIndex], toSort];
     } else {
       i++;
     }
   }
   return nums;
-};
+}
 
 console.log(cyclicSort([2, 6, 4, 3, 1, 5]));
