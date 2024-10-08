@@ -2,19 +2,20 @@ function findMissingNumber(nums) {
   let i = 0;
   const n = nums.length;
   while (i < n) {
-    let j = nums[i];
-    if (nums[i] < n && nums[i] !== nums[j]) {
-      let temp = nums[i];
-      nums[i] = nums[j];
-      nums[j] = temp;
+    let currentNumber = nums[i];
+    let correctIndex = currentNumber;
+
+    if (currentNumber < n && currentNumber !== nums[correctIndex]) {
+      [nums[i], nums[correctIndex]] = [nums[correctIndex], nums[i]];
     } else {
       i++;
     }
   }
 
-  for (let i = 0; i < n; i++) {
-    if (i !== nums[i]) {
-      return i;
+  for (let index = 0; index < n; index++) {
+    let currentNumber = nums[index];
+    if (index !== nums[currentNumber]) {
+      return index;
     }
   }
 
