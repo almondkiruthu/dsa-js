@@ -14,3 +14,4 @@ function cyclicSort(nums) {
 }
 
 console.log(cyclicSort([2, 6, 4, 3, 1, 5]));
+console.log(cyclicSort([1, 2, 3, 4, 2]));
