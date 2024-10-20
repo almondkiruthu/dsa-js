@@ -54,8 +54,8 @@ function reverseSubList(head, p, q) {
   if (LAST_NODE_OF_FIRST_PART !== null) {
     // 'previous is now the firt part of our sub-list'
     LAST_NODE_OF_FIRST_PART.next = previous;
-    // this means p === 1 i.e., we are changing the first node (head) of the LinkedList
   } else {
+    // this means p === 1 i.e., we are changing the first node (head) of the LinkedList
     head = previous;
   }
 
