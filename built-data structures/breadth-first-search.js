@@ -13,6 +13,7 @@ class Tree {
   }
   bfs(rootNode) {
     if (!rootNode) return undefined;
+
     const result = [];
     let queue = [];
     let currNode = rootNode;
